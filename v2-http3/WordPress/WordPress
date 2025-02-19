@@ -16,6 +16,8 @@ server {
   {{nginx_access_log}}
   {{nginx_error_log}}
 
+  include /etc/nginx/conf.d/8g.conf;
+  
   if ($scheme != "https") {
     rewrite ^ https://$host$request_uri permanent;
   }
